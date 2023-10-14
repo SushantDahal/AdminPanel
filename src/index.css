@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Lato", sans-serif;
 }
 
 body {
@@ -14,4 +15,28 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+Ma Nish :root {
+  /* primary Color variable for background */
+  --clr-primary-0: #fff;
+  --clr-primary-1: #000;
+  /* Color variable for Text */
+  --clr-btn-card: #7d8184;
+  --clr-text-0: #fafafa;
+  --clr-text-1: #7d8184;
+  --clr-text-2: #000000;
+
+  /* Secondary COlor variable */
+  --clr-secondary-0: #f5f5f5;
+  --clr-secondary-1: #fefaf1;
+  --clr-secondary-2: #db4444;
+
+  /* Color Variable for button background */
+  --clr-btn-1: #00ff66;
+  --clr-btn-hover-1: #a0bce0;
+  --clr-btn-2: #db4444;
+  --clr-btn-hover-2: #e07575;
+
+  /* Color for success */
+  --clr-success-500: #10b981;
 }
