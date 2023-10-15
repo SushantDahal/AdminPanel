@@ -50,12 +50,14 @@ const Addproduct = ({ showNav, setShowNav }) => {
       }`}
     >
       <div className="pl-4 md:pl-16  w-full  ">
-        <h1 className="text-2xl font-bold uppercase text-black ">
-          Add for product
-        </h1>
-        <small className="text-gray-500 text-[14px]">
-          order placed across your store
-        </small>
+        <div className="flex flex-col w-[400px]">
+          <h1 className="text-3xl font-bold uppercase text-black  ">
+            Add for product
+          </h1>
+          <small className="text-gray-500 text-xl">
+            order placed across your store
+          </small>
+        </div>
         <div className="grid lg:grid-cols-3 gap-2 mr-10 my-4 cursor-pointer ">
           <div className="bg-[#CDF1B0] col-span-2 rounded-md mb-5">
             <div>
