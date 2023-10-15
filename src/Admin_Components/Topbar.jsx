@@ -19,9 +19,9 @@ const Topbar = ({ showNav, setShowNav }) => {
           onClick={() => setShowNav(!showNav)}
         />
       </div>
-      <div className="flex gap-3 px-10">
+      <div className="flex gap-3 px-10 mr-6">
         <ChevronDownIcon className="h-6 text-gray-700 cursor-pointer" />
-        <PencilIcon className="h-6 text-gray-700 cursor-pointer" />
+
         <CreditCardIcon className="h-6 text-gray-700 cursor-pointer" />
         <Cog8ToothIcon className="h-6  text-gray-700 cursor-pointer" />
       </div>
