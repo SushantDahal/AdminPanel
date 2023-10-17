@@ -1,6 +1,5 @@
 import {
   Bars3CenterLeftIcon,
-  PencilIcon,
   ChevronDownIcon,
   CreditCardIcon,
   Cog8ToothIcon,
@@ -9,8 +8,8 @@ import {
 const Topbar = ({ showNav, setShowNav }) => {
   return (
     <div
-      className={`fixed w-full  py-2 h-15 bg-white flex justify-between items-center transition-all  duration-300 ${
-        showNav ? "pl-[13rem] " : ""
+      className={`fixed w-full  py-2 h-15 bg-[#dff1cf]  flex justify-between items-center transition-all  duration-300 ${
+        showNav ? "pl-56 " : ""
       }`}
     >
       <div className="pl-4 md:pl-16">

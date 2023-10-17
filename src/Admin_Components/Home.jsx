@@ -21,18 +21,14 @@ const Home = ({ showNav, setShowNav }) => {
           <div className="bg-white rounded-md h-[6rem] flex items-center gap-4 border-[red] border-l-4 hover:-translate-y-2  duration-300 ">
             <UserGroupIcon className="h-10 min-w-[40px]  ml-4 bg-[#d3b0f1] rounded-full p-2 " />
             <div>
-              <h1 className="font-bold text-xl" contenteditable="true">
-                {user}
-              </h1>
+              <h1 className="font-bold text-xl">{user}</h1>
               <p className="text-gray-400">New User</p>
             </div>
           </div>
           <div className="bg-white rounded-md h-[6rem] flex items-center gap-4  border-[blue] border-l-4 hover:-translate-y-2  duration-300">
             <BsCart3 className="h-10 min-w-[40px] ml-4 bg-[#d3b0f1] rounded-full p-2 " />
             <div>
-              <h1 className="font-bold text-xl" contenteditable="true">
-                {orders}
-              </h1>
+              <h1 className="font-bold text-xl">{orders}</h1>
               <p className="text-gray-400">Total Orders</p>
             </div>
           </div>
@@ -40,18 +36,14 @@ const Home = ({ showNav, setShowNav }) => {
           <div className="bg-white rounded-md h-[6rem] flex items-center gap-4 border-[#46d346] border-l-4 hover:-translate-y-2  duration-300">
             <BsBucket className="h-10 ml-4 min-w-[40px]  bg-[#d3b0f1] rounded-full p-2 " />
             <div>
-              <h1 className="font-bold text-xl" contenteditable="true">
-                {product}
-              </h1>
+              <h1 className="font-bold text-xl">{product}</h1>
               <p className="text-gray-400">Available Product</p>
             </div>
           </div>
           <div className="bg-white rounded-md h-[6rem] flex items-center gap-4 border-[yellow] border-l-4 hover:-translate-y-2  duration-300">
             <BsPeopleFill className="h-10 min-w-[40px]  ml-4 bg-[#d3b0f1] rounded-full p-2 " />
             <div>
-              <h1 className="font-bold text-xl" contenteditable="true">
-                {customer}
-              </h1>
+              <h1 className="font-bold text-xl">{customer}</h1>
               <p className="text-gray-400">Customers</p>
             </div>
           </div>

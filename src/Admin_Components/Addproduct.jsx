@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
+
 const Addproduct = ({ showNav, setShowNav }) => {
   const [click, setClick] = useState(true);
   function handleClick() {
     setClick(!click);
   }
-  // list option on select vendor CATEGORy
+
+  // list option on select vendor CATEGORY
   const [Vendor, selectVendor] = useState("");
 
   const handleVendor = (select) => {
@@ -13,12 +15,12 @@ const Addproduct = ({ showNav, setShowNav }) => {
   };
 
   // category Option on select vendor
-
   const [category, categoryOption] = useState(false);
   function Option() {
     categoryOption(!category);
   }
-  // Import  image
+
+  // Import image
   const [selectedImages, setSelectedImages] = useState([]);
   const [imageUrls, setImageUrls] = useState([]);
 
@@ -32,7 +34,7 @@ const Addproduct = ({ showNav, setShowNav }) => {
     setSelectedImages([...selectedImages, ...files]);
     setImageUrls([...imageUrls, ...urls]);
   };
-  // Delete Image
+  // Delete image
   const handleImageDelete = (index) => {
     const updatedImages = [...selectedImages];
     const updatedUrls = [...imageUrls];
@@ -43,18 +45,33 @@ const Addproduct = ({ showNav, setShowNav }) => {
     setSelectedImages(updatedImages);
     setImageUrls(updatedUrls);
   };
+  // Import thumbnail images
+  const [selectedThumbnail, setSelectedThumbnail] = useState(null);
+
+  const handleThumbnailUpload = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const url = URL.createObjectURL(file);
+      setSelectedThumbnail(file);
+    }
+  };
+
+  const handleThumbnailDelete = () => {
+    setSelectedThumbnail(null);
+  };
+
   return (
     <div
-      className={`  h-15  h-[1200px] min-w-[200px] flex w-full   pt-20 transition-all  duration-300 ${
+      className={`  h-[1200px] min-w-[200px] flex w-full  pt-20 transition-all  duration-300 ${
         showNav ? "pl-56 " : ""
       }`}
     >
-      <div className="pl-4 md:pl-16  w-full  ">
-        <div className="flex flex-col w-[400px]">
+      <div className="pl-4 md:pl-10 mr-4   w-full ">
+        <div className="flex flex-col ">
           <h1 className="text-3xl font-bold uppercase text-black  ">
             Add for product
           </h1>
-          <small className="text-gray-500 text-xl">
+          <small className="text-gray-500 text-xs">
             order placed across your store
           </small>
         </div>
@@ -183,7 +200,7 @@ const Addproduct = ({ showNav, setShowNav }) => {
                         Electronic
                       </li>
                       <li
-                        className=" hover:bg-whitepy-1 px-2 max-w-[250px]"
+                        className=" hover:bg-white py-1 px-2 max-w-[250px]"
                         onClick={() => handleVendor("Office")}
                       >
                         Office
@@ -201,9 +218,45 @@ const Addproduct = ({ showNav, setShowNav }) => {
             </div>
           </div>
           {/* Thumnail section */}
-          <div className="bg-[#CDF1B0] col-span-2 px-4 my-6 pb-5 rounded-md">
-            <h1 className="text-center font-bold py-4">Add For Thumbnail</h1>
-            <div></div>
+          {/* Add Thumbnail Section */}
+          <div className="bg-[#CDF1B0] col-span-2 px-4 py-1 mb-8 pb-5 rounded-md">
+            <div className="flex justify-between  px-4 py-2">
+              <h1 className="text-gray-500 font-bold">Thumbnail Image</h1>
+              <p className="text-[#396ad3]">Add a thumbnail image</p>
+            </div>
+            <div className="flex items-center justify-center  h-c flex-col border-dashed border-2 border-gray-600 ">
+              {selectedThumbnail ? (
+                <div className=" bg-white rounded-b-md my-1">
+                  <img
+                    src={URL.createObjectURL(selectedThumbnail)}
+                    alt="Thumbnail Img"
+                    style={{ width: "120px", height: "100px" }}
+                  />
+                  <hr className="my-2 w-[90%] mx-auto " />
+
+                  <button
+                    onClick={handleThumbnailDelete}
+                    className="text-red-800 cursor-pointer font-bold mx-10 my-2 bg-[#CDF1B0] border-black border-2  w-10"
+                  >
+                    X
+                  </button>
+                </div>
+              ) : (
+                <h1 className="text-xl md:text-2xl font-bold text-gray-500 my-2">
+                  Import Thumbnail Image Here
+                </h1>
+              )}
+
+              <span className="text-gray-500 leading-10 font-semibold">or</span>
+              <label className="bg-[#00ff66] px-2 py-1 my-5 rounded-md hover-bg-[#a0bce0]">
+                Browse thumbnail image
+                <input
+                  type="file"
+                  style={{ display: "none" }}
+                  onChange={handleThumbnailUpload}
+                />
+              </label>
+            </div>
           </div>
           {/* Add image Section */}
           <div className="bg-[#CDF1B0]  col-span-2 px-4 py-1 mb-10 pb-5 rounded-md">
@@ -211,9 +264,9 @@ const Addproduct = ({ showNav, setShowNav }) => {
               <h1 className="text-gray-500 font-bold">Media</h1>
               <p className="text-[#396ad3]">Add media from URL</p>
             </div>
-            <div className="flex items-center justify-center h-[200px] flex-col border-dashed border-2 border-gray-600">
+            <div className="flex items-center justify-center  h-c flex-col border-dashed border-2 border-gray-600">
               {imageUrls.length > 0 ? (
-                <div className="flex flex-wrap justify-center">
+                <div className="grid grid-cols-3 md:grid-cols-5  col-span-5  bg-white">
                   {imageUrls.map((url, index) => (
                     <div key={index} className="m-2">
                       <img
@@ -231,13 +284,13 @@ const Addproduct = ({ showNav, setShowNav }) => {
                   ))}
                 </div>
               ) : (
-                <h1 className="text-xl md:text-2xl font-bold text-gray-500">
+                <h1 className="text-xl md:text-2xl font-bold text-gray-500 my-4">
                   Drag and drop your images here
                 </h1>
               )}
 
               <span className="text-gray-500 leading-10 font-semibold">or</span>
-              <label className="bg-[#00ff66] px-2 py-1 rounded-md hover:bg-[#a0bce0]">
+              <label className="bg-[#00ff66] px-2 py-1 my-5 rounded-md hover:bg-[#a0bce0]">
                 Browse images
                 <input
                   type="file"
