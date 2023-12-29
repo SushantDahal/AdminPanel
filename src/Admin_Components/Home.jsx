@@ -48,10 +48,6 @@ const Home = ({ showNav, setShowNav }) => {
             </div>
           </div>
         </div>
-        {/* <div className="grid md:grid-cols-2 gap-6 my-10 bg-white" id="chart">
-          <div className="w-full h-[400px] py-4 bg-blue-400"></div>
-          <div></div>
-        </div> */}
       </div>
     </div>
   );
